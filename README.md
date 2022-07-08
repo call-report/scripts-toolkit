@@ -7,7 +7,12 @@ This repository contains various scripts written for purposes of aiding ETL and 
 ### Python
 
 #### CDR Taxonomy Processor
+
 Converts the XBRL-based taxonomy files into a hierarchial JSON format.
+
+#### MDRM Data Dictionary Collection Process
+
+Downloads the Call Report data dictionary (field names are called "MDRMs"), ETLs and cleans the incoming data, and outputs the resultant data as a JSON file.
 
 ## Next Steps
 

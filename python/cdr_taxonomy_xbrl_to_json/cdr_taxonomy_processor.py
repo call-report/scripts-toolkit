@@ -1,7 +1,7 @@
 """
 Processes a CDR Taxonomy XBRL file and converts the file to JSON format.
 
-The FFIEC (Federal Financial Institutions Examinations Council)'s Public Data Repostitory
+The FFIEC (Federal Financial Institutions Examinations Council)'s Public Data Repository
 publishes quarterly taxonomies of the FFIEC 031, 041, and 051 forms in XBRL format, provided
 as XBRL files contained within a ZIP file.
 
@@ -14,14 +14,14 @@ software, extracting taxonomy information from the XBRL files can be tedious.
 This script provides a one-shot process to convert the XBRL files to JSON format.
 
 From the JSON-based files, bulk data may be joined to the CDR Taxonomy JSON files
-for purpoess of presenting and viewing data in a more analyst-friendly format.
+for purposes of presenting and viewing data in a more analyst-friendly format.
 
 This script is published under the MIT license. Please see the LICENSE file in the
-source repsitory for more information.
+source repository for more information.
 
 TODO: Add documentation for methodology
 
-Version 0.0.5
+Version 0.0.2
 """
 
 import sys
@@ -269,25 +269,26 @@ Initializes CLI argument parsing
 def init_argparse() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         usage="%(prog)s [input_file]",
-        description="Print or check SHA1 (160-bit) checksums."
+        description="Converts FFIEC XBRL-based CDR file to JSON format",
     )
     parser.add_argument(
         "-v", "--version", action="version",
-        version = f"{parser.prog} version 1.0.0"
+        version = f"{parser.prog} version 0.0.2"
     )
     parser.add_argument('files', nargs='*')
     return parser
 
+
 def main() -> None:
     parser = init_argparse()
     args = parser.parse_args()
-    
+
     if len(args.files) == 0:
         print("\nCDR Taxonomy XBRL to JSON Parser")
         print("No files specified. Please specify at least one file.\n")
         return
-    
-    
+
+
     for file in args.files:
         print("Processing file: ", file)
         process_zip(file)
