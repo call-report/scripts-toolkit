@@ -2,7 +2,7 @@
 
 ## CDR XBRL Taxonomy Processor
 
-- Converts zipped CDR Taxonomy Files into a single JSON file. The JSON file contains a heirarchial representation of the relationships described by the XBRL files.
+- Converts zipped CDR Taxonomy Files into a single JSON file. The JSON file contains a hierarchical representation of the relationships described by the XBRL files.
 
 ### Requirements
 
